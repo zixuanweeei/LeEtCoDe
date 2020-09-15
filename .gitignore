@@ -1,0 +1,11 @@
+# Ignore all
+*
+
+# Add all with extensions
+!*.*
+
+# Add all directories
+!*/
+
+# Visual Studio Code
+.vscode
