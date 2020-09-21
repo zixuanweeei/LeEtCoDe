@@ -37,7 +37,7 @@ public:
         TreeNode *top = node_stack.top();
         ret.push_back(top->val);
         node_stack.pop();
-        node_stack.push(top->right);
+        node = top->right;
       }
     }
     return ret;
