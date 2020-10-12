@@ -2,6 +2,8 @@
 #include <stack>
 #include <vector>
 
+#include <TreeNode.hpp>
+
 using namespace std;
 
 /**
