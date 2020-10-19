@@ -9,9 +9,7 @@ public:
       return;
     }
     for (int x = 0; x < n; ++x) {
-      if (column[x] || diag1[x + y] || diag2[x - y + n - 1]) {
-        continue;
-      }
+      if (column[x] || diag1[x + y] || diag2[x - y + n - 1]) { continue; }
       column[x] = diag1[x + y] = diag2[x - y + n - 1] = 1;
       backtracing(y + 1, n);
       column[x] = diag1[x + y] = diag2[x - y + n - 1] = 0;

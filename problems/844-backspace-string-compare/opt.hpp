@@ -26,13 +26,9 @@ public:
         }
       }
       if (i >= 0 && j >= 0) {
-        if (S[i] != T[j]) {
-          return false;
-        }
+        if (S[i] != T[j]) { return false; }
       } else {
-        if (i >= 0 || j >= 0) {
-          return false;
-        }
+        if (i >= 0 || j >= 0) { return false; }
       }
       i--, j--;
     }

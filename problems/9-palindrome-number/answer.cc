@@ -19,7 +19,7 @@ public:
   }
 };
 
-int main(int argv, char** argc) {
+int main(int argv, char **argc) {
   const int in = std::stoi(argc[1]);
   Solution sol;
   const bool ret = sol.isPalindrome(in);

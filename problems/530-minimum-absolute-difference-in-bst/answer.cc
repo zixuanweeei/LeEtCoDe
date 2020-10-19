@@ -28,11 +28,11 @@ public:
       } else {
         node = node_stack.top();
         if (tmp == -1) {
-            tmp = node->val;
+          tmp = node->val;
         } else {
-            int cur = node->val - tmp;
-            tmp = node->val;
-            minimum = min(cur, minimum);
+          int cur = node->val - tmp;
+          tmp = node->val;
+          minimum = min(cur, minimum);
         }
         node_stack.pop();
         node = node->right;

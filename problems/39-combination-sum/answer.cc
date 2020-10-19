@@ -1,13 +1,13 @@
 #include <iostream>
-#include <vector>
 #include <numeric>
+#include <vector>
 
 using namespace std;
 
 class Solution {
 public:
   vector<vector<int>> ret;
-  
+
   void dfs(vector<int> &candidates, int target, vector<int> &state, int start) {
     if (target == 0) {
       ret.emplace_back(state.begin(), state.end());
@@ -35,9 +35,7 @@ public:
 int main(int argv, char **argc) {
   int target = stoi(argc[1]);
   vector<int> candidates;
-  for (int i = 2; i < argv; ++i) {
-    candidates.push_back(stoi(argc[i]));
-  }
+  for (int i = 2; i < argv; ++i) { candidates.push_back(stoi(argc[i])); }
   Solution sol;
   auto ret = sol.combinationSum(candidates, target);
   cout << "Solution is:\n[\n";
@@ -47,6 +45,6 @@ int main(int argv, char **argc) {
     cout << "],\n";
   }
   cout << "]" << endl;
-  
+
   return 0;
 }

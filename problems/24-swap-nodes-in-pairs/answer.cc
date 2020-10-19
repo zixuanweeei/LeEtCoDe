@@ -12,17 +12,14 @@ public:
 
     while (first) {
       ListNode *second = first->next;
-      if (end)
-        end->next = second;
+      if (end) end->next = second;
       if (!second) {
         if (end) end->next = first;
         break;
       }
       ListNode *third = second->next;
 
-      if (new_head == head) {
-        new_head = second;
-      }
+      if (new_head == head) { new_head = second; }
       second->next = first;
       first->next = third;
       end = first;

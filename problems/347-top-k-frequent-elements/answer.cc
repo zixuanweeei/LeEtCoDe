@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution {
 public:
-  vector<int> topKFrequent(vector<int>& nums, int k) {
+  vector<int> topKFrequent(vector<int> &nums, int k) {
     heap_.emplace_back(0, 0);
     for (auto v : nums) {
       int idx = -1;
@@ -20,15 +20,14 @@ public:
     }
 
     vector<int> ret;
-    for (int i = 1; i < k + 1 && i < heap_.size(); ++i)
-      ret.push_back(pop());
+    for (int i = 1; i < k + 1 && i < heap_.size(); ++i) ret.push_back(pop());
     return ret;
   }
 
   void swim(int idx) {
     while (idx > 1 && less(idx / 2, idx)) {
-        swap(heap_[idx / 2], heap_[idx]);
-        idx /= 2;
+      swap(heap_[idx / 2], heap_[idx]);
+      idx /= 2;
     }
   }
   bool find(int key, int *idx) {
@@ -38,12 +37,10 @@ public:
         return true;
       }
     }
-    
+
     return false;
   }
-  bool less(int lhs, int rhs) {
-    return heap_[lhs].second < heap_[rhs].second;
-  }
+  bool less(int lhs, int rhs) { return heap_[lhs].second < heap_[rhs].second; }
   int pop() {
     int max = heap_[1].first;
     num_--;
@@ -54,7 +51,7 @@ public:
   void sink(int k) {
     while (2 * k < num_) {
       int j = 2 * k;
-      if (j < num_ - 1 && less(j, j+1)) j++;
+      if (j < num_ - 1 && less(j, j + 1)) j++;
       if (!less(k, j)) break;
       swap(heap_[k], heap_[j]);
       k = j;
@@ -69,9 +66,7 @@ private:
 int main(int argv, char **argc) {
   vector<int> nums;
   int k = stoi(argc[1]);
-  for (int i = 2; i < argv; ++i) {
-    nums.push_back(stoi(argc[i]));
-  }
+  for (int i = 2; i < argv; ++i) { nums.push_back(stoi(argc[i])); }
   Solution sol;
   auto ret = sol.topKFrequent(nums, k);
   for (auto v : ret) std::cout << v << ", ";
