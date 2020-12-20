@@ -9,3 +9,6 @@
 
 # Visual Studio Code
 .vscode
+
+# Executable
+.x
